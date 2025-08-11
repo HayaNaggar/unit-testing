@@ -35,7 +35,7 @@ public class StopWatchTest {
     //Arrange
     Stopwatch stopwatch = new Stopwatch();
     //Act
-    stopwatch.recordMinutes(1440); // 24 hours
+    stopwatch.recordMinutes(1600); // 1600 minutes = 26 hours
     //Assert
     assertEquals(1, stopwatch.getRecordedDays());
   }

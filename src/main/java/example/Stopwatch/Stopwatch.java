@@ -26,6 +26,11 @@ public class Stopwatch {
         return this.hours;
     }
     public int getRecordedDays() {
+         getRecordedHours(); 
+        if (this.hours >= 24) {
+        this.day += this.hours / 24;
+        this.hours = this.hours % 24;
+        }
         return this.day;
     }
 }
