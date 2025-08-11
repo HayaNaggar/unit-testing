@@ -5,7 +5,8 @@ public class Stopwatch {
     int minutes=0;
     int seconds=0;
     int day=0;
-    int workingHours=0;
+    int workingHours=0; //assuming a wroking day is 8 hours
+    int workingDays = 0;
 
  public void recordMinutes(int minutes) {
     if (minutes > 0) {
@@ -14,10 +15,7 @@ public class Stopwatch {
             this.hours += this.minutes / 60;
             this.minutes = this.minutes % 60;
         }
-        if (this.hours >= 24) {
-            this.day += this.hours / 24;
-            this.hours = this.hours % 24;
-        }
+       
     } else {
         System.out.println("Invalid input. Minutes must be a positive number");
     }
@@ -33,5 +31,11 @@ public class Stopwatch {
     public int getRecordedDays() {
 
         return this.day;
+    }
+    public int getRecordedWorkingHours() {
+        return this.workingHours;
+    }
+       public int getRecordedWorkingDays() {
+        return this.workingDays;
     }
 }

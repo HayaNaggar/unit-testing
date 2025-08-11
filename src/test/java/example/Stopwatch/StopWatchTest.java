@@ -47,6 +47,8 @@ public class StopWatchTest {
         //Act
         stopwatch.recordMinutes(480); 
         //Assert
-        assertEquals(8, stopwatch.getRecordedMinutes());
+    assertEquals(0, stopwatch.getRecordedWorkingHours()); // because leftover = 0
+      assertEquals(1, stopwatch.getRecordedWorkingDays());  // 1 full workday
+
     }
 }
