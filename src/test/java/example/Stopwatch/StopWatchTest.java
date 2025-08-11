@@ -1,4 +1,5 @@
 package example.Stopwatch;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 //el steps for reference
 //TODO
