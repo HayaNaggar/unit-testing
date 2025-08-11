@@ -20,4 +20,21 @@ public class AccountManagerTest {
         Assertions.assertEquals(500, c.getBalance());
     }
 
+    @Test
+    void givenCustomreWithInsufficientBalance_AndNotVIp_whenWithdraw_thenFail() {
+        // Arrange
+        AccountManager am = new AccountManagerImpl();
+        Customer c = new Customer();
+        c.setBalance(100);
+        c.setCreditAllowed(true);
+        c.setVip(false);
+
+        // Act
+        String result = am.withdraw(c, 200);
+
+        // Assert
+        Assertions.assertEquals("maximum credit exceeded", result);
+        Assertions.assertEquals(100, c.getBalance());
+    }
+
 }
