@@ -13,9 +13,17 @@ public class Stopwatch {
         this.minutes += minutes; 
         if (this.minutes >= 60) {
             this.hours += this.minutes / 60;
-            this.minutes = this.minutes % 60;
+             this.workingHours += (this.minutes / 60); 
+             this.minutes = this.minutes % 60;
         }
-       
+        if (this.hours >= 24) {
+            this.day += this.hours / 24;
+            this.hours = this.hours % 24;
+        }
+        if (this.workingHours >= 8) {
+         this.workingDays += this.workingHours / 8;
+        this.workingHours = this.workingHours % 8;
+            }
     } else {
         System.out.println("Invalid input. Minutes must be a positive number");
     }
