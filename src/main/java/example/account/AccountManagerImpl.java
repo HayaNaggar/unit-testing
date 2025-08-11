@@ -14,11 +14,14 @@ public class AccountManagerImpl implements AccountManager {
         if (expectedBalance < 0) {
             if (!customer.isCreditAllowed()) {
                 return "insufficient account balance";
-            } else if (expectedBalance < MAX_CREDIT && !customer.isVip()) {
+            } else if (isOverCreditLimit(customer, expectedBalance)) {
                 return "maximum credit exceeded";
             }
         }
         customer.setBalance(expectedBalance);
         return "success";
     }
+    private boolean isOverCreditLimit(Customer customer, int expectedBalance) {
+    return !customer.isVip() && expectedBalance < MAX_CREDIT;
+}
 }
