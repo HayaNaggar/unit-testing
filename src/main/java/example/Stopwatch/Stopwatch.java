@@ -7,12 +7,12 @@ public class Stopwatch {
     int day=0;
     int workingHours=0;
 
-  public void recordMinutes(int minutes) {
+ public void recordMinutes(int minutes) {
     if (minutes > 0) {
-     this.minutes += minutes; 
-      if (this.minutes >= 60) {
-         this.hours += this.minutes / 60;
-         this.minutes = this.minutes % 60;
+        this.minutes += minutes; 
+        if (this.minutes >= 60) {
+            this.hours += this.minutes / 60;
+            this.minutes = this.minutes % 60;
         }
         if (this.hours >= 24) {
             this.day += this.hours / 24;
@@ -23,4 +23,15 @@ public class Stopwatch {
     }
 }
 
+    public int getRecordedMinutes(){
+    return this.minutes;
+    }
+    public int getRecordedHours() {
+
+        return this.hours;
+    }
+    public int getRecordedDays() {
+
+        return this.day;
+    }
 }
