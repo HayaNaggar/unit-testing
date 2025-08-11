@@ -18,4 +18,7 @@ public class Stopwatch {
     public int getRecordedMinutes(){
     return this.minutes;
     }
+    public int getRecordedHours() {
+        return this.hours;
+    }
 }
