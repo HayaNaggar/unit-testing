@@ -40,4 +40,13 @@ public class StopWatchTest {
     assertEquals(1, stopwatch.getRecordedDays());
   }
  
+  @Test
+    void TestWorkingHours() {
+        //Arrange
+        Stopwatch stopwatch = new Stopwatch();
+        //Act
+        stopwatch.recordMinutes(480); 
+        //Assert
+        assertEquals(8, stopwatch.getRecordedMinutes());
+    }
 }
