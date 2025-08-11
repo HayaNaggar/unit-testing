@@ -19,7 +19,7 @@ public class StopWatchTest {
     //Act
     stopwatch.recordMinutes(-5);
     //Assert
-      assertEquals(5, stopwatch.getRecordedMinutes());
+    assertEquals(0, stopwatch.getRecordedMinutes());
   }
   
 
