@@ -25,4 +25,7 @@ public class Stopwatch {
         }
         return this.hours;
     }
+    public int getRecordedDays() {
+        return this.day;
+    }
 }
