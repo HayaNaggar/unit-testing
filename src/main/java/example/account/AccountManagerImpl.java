@@ -11,18 +11,24 @@ public class AccountManagerImpl implements AccountManager {
     public String withdraw(Customer customer, int amount) {
         int expectedBalance = customer.getBalance() - amount;
 
-        if (expectedBalance < 0) {
+        if (isOverdrawn(expectedBalance)) {
             if (!customer.isCreditAllowed()) {
                 return "insufficient account balance";
             } else if (isOverCreditLimit(customer, expectedBalance)) {
                 return "maximum credit exceeded";
             }
         }
-        customer.setBalance(expectedBalance);
+        updateBalance(customer, expectedBalance);
         return "success";
     }
     private boolean isOverCreditLimit(Customer customer, int expectedBalance) {
      return !customer.isVip() && expectedBalance < MAX_CREDIT;
    
+}
+private void updateBalance(Customer customer, int newBalance) {
+    customer.setBalance(newBalance);
+}
+private boolean isOverdrawn(int expectedBalance) {
+    return expectedBalance < 0;
 }
 }
