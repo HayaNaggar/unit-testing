@@ -19,6 +19,10 @@ public class Stopwatch {
     return this.minutes;
     }
     public int getRecordedHours() {
+        if (this.minutes >= 60) {
+            this.hours += this.minutes / 60;
+            this.minutes = this.minutes % 60;
+        }
         return this.hours;
     }
 }
